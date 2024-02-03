@@ -1,105 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Price</title>
-</head>
 
-<div>
-    <div>
-        <h1 style="text-align: center;">Прайс-лист</h1>
-    </div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+          rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <title>Размеры и отступ</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #f6f7f9;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h1 {
+            font-size: 44px;
+            margin: 1px;
+        }
+
+        h2 {
+            font-size: 36px;
+            width: 50%;
+            margin: 1px;
+        }
+
+        header {
+            height: 100px;
+            padding: 0 40px;
+        }
+
+        header > div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .fixed-container {
+            max-width: 1000px;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .fixed-container a {
+            margin-right: 10px;
+        }
+
+        section {
+            padding: 40px;
+        }
+
+        .first-block > div {
+            display: flex;
+            background-image: url("files/man.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            background-position: right center;
+            height: 450px;
+        }
+
+        .services {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .services > div {
+            width: 200px;
+        }
+
+        .services img {
+            width: 150px;
+        }
+
+        .examples {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .examples img {
+            width: 320px;
+        }
+
+        .price-info {
+            background-color: #3d52fe;
+            color: white;
+        }
+
+        .price-info .custom-paragraphs p {
+            font-size: 12px;
+            line-height: 0.2;
+        }
+
+        .price-info .fixed-container > div {
+            margin-top: 90px;
+            margin-bottom: 50px;
+        }
+
+        .light-button {
+            border: 1px solid black;
+            background-color: transparent;
+        }
+
+        .dark-button {
+            border: 1px solid #3d52fe;
+            background-color: #3d52fe;
+            color: white;
+            margin: 1px;
+        }
+
+        button {
+            padding: 10px 30px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        footer {
+            padding: 40px;
+        }
+
+        footer .footer-links {
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer img {
+            width: 50px;
+        }
+
+        footer a {
+            margin-bottom: 15px;
+        }
+
+        .footer-links-contacts-social {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .footer-links-contacts-social img {
+            max-width: 17px;
+            max-height: 17px;
+        }
+
+        .footer-social-media {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-social-media a {
+            margin-right: 20px;
+        }
+
+        .popup-container {
+            background-color: #000000b3;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup {
+            background-color: white;
+            width: 300px;
+            height: 300px;
+            padding: 30px;
+            border-radius: 5px;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var container = document.querySelector('.popup-container');
+            var popupButtons = document.querySelectorAll('.open-popup');
+            var submitButton = document.getElementById('submitButton');
+
+            for (let i = 0; i < popupButtons.length; i++) {
+                popupButtons[i].addEventListener('click', function () {
+                    container.style.display = 'flex';
+                });
+            }
+
+            container.addEventListener('click', function (event) {
+                if (event.target == container) {
+                    container.style.display = 'none';
+                }
+            });
+
+            submitButton.addEventListener('click', function () {
+                container.style.display = 'none';
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+<div class="popup-container">
+    <form class="popup">
+        <label>
+            <input type="text" placeholder="Введите ваше имя">
+        </label>
+        <label>
+            <input type="email" placeholder="Введите Email">
+        </label>
+        <button type="submit" id="submitButton">Отправить</button>
+    </form>
 </div>
-<!-- ####### Comments are visible in the source editor ###### -->
-<div>
-    <div>
-        <table class="editorDemoTable"
-               style="height: 660px; width: 331px; vertical-align: top; border-style: none; margin-left: auto; margin-right: auto;">
-            <thead>
-            <tr style="border-style: groove; height: 20px;">
-                <td style="height: 20px; width: 140px; text-align: center; border-style: solid;">
-                    <h4>Услуга</h4>
-                </td>
-                <td style="width: 133.75px; height: 20px; text-align: center; border-style: solid;">
-                    <h4>Описание</h4>
-                </td>
-                <td style="width: 37.25px; height: 20px; text-align: center; border-style: solid;">
-                    <h4>Цена, руб.</h4>
-                </td>
-            </tr>
-            <tr style="border-style: groove; height: 10px;">
-                <td style="min-width: 140px; width: 323px; height: 10px; text-align: center; border-style: solid;"
-                    colspan="3">
-                    <p><strong>Аппаратный маникюр с покрытием от 2000 руб.</strong></p>
-                </td>
-            </tr>
-            <tr style="border-style: groove; height: 25px;">
-                <td style="min-width: 140px; width: 140px; height: 25px; border-style: solid;"><strong>маникюр</strong>
-                </td>
-                <td style="width: 133.75px; height: 25px; border-style: solid;">аппаратный маникюр&nbsp; без покрытия
-                </td>
-                <td style="width: 37.25px; height: 25px; border-style: solid; text-align: center;">
-                    <em><strong>1500</strong></em></td>
-            </tr>
-            <tr style="border-style: groove; height: 65px;">
-                <td style="min-width: 140px; width: 140px; height: 65px; border-style: solid;">
-                    <p><strong>маникюр </strong><strong>с&nbsp; покрытием гель-лак</strong></p>
-                </td>
-                <td style="width: 133.75px; height: 65px; border-style: solid;">
-                    <p>снятие старого&nbsp; покрытия,&nbsp; аппаратный&nbsp; маникюр,&nbsp; выравнивание&nbsp; ногтевой
-                        пластины,&nbsp; покрытие цветом под&nbsp; кутикулу</p>
-                    <p><em>+ дизайн двух&nbsp; ноготков <span style="text-decoration: underline;">в подарок</span>!</em>
-                    </p>
-                </td>
-                <td style="width: 37.25px; height: 65px; text-align: center; border-style: solid;">
-                    <em><strong>2000</strong></em></td>
-            </tr>
-            <tr style="border-style: groove; height: 46px;">
-                <td style="min-width: 140px; width: 140px; height: 46px; border-style: solid;"><strong>укрепление гелем&nbsp;</strong>
-                </td>
-                <td style="width: 133.75px; height: 46px; border-style: solid;">дополнительная&nbsp; услуга</td>
-                <td style="width: 37.25px; height: 46px; text-align: center; border-style: solid;">
-                    &nbsp;<em><strong>200</strong></em></td>
-            </tr>
-            <tr style="border-style: groove; height: 41.2188px;">
-                <td style="height: 41.2188px; width: 323px; text-align: center; border-style: solid;" colspan="3">
-                    <strong>Аппаратный педикюр с покрытием от 2000 руб.</strong></td>
-            </tr>
-            <tr style="border-style: groove; height: 36px;">
-                <td style="width: 140px; height: 36px; border-style: solid;"><strong>обработка&nbsp; пальчиков без&nbsp;
-                    покрытия</strong></td>
-                <td style="width: 133.75px; height: 36px; border-style: solid;">SMART-педикюр</td>
-                <td style="width: 37.25px; height: 36px; text-align: center; border-style: solid;">&nbsp;<em><strong>1200</strong></em>
-                </td>
-            </tr>
-            <tr style="border-style: groove; height: 43px;">
-                <td style="width: 140px; height: 43px; border-style: solid;"><strong><strong>обработка&nbsp; пальчиков с&nbsp;
-                    покрытием</strong></strong></td>
-                <td style="width: 133.75px; height: 43px; border-style: solid;">SMART-педикюр&nbsp;</td>
-                <td style="width: 37.25px; height: 43px; text-align: center; border-style: solid;">&nbsp;<em><strong>2000</strong></em>
-                </td>
-            </tr>
-            <tr style="border-style: groove; height: 43px;">
-                <td style="width: 140px; height: 43px; border-style: solid;"><strong><strong><strong>&nbsp;обработка
-                    стоп&nbsp; и&nbsp; &nbsp;пальчиков с&nbsp; &nbsp;покрытием</strong></strong></strong>&nbsp;
-                </td>
-                <td style="width: 133.75px; height: 43px; border-style: solid;">SMART-педикюр</td>
-                <td style="width: 37.25px; height: 43px; text-align: center; border-style: solid;">
-                    <em><strong>2200</strong></em></td>
-            </tr>
-            <tr style="border-style: groove; height: 43px;">
-                <td style="width: 140px; height: 43px; border-style: solid;"><strong><strong><strong><strong><strong>обработка
-                    стоп&nbsp; и&nbsp; пальчиков без&nbsp; покрытия</strong></strong></strong></strong></strong></td>
-                <td style="width: 133.75px; height: 43px; border-style: solid;">SMART-педикюр</td>
-                <td style="width: 37.25px; height: 43px; text-align: center; border-style: solid;">&nbsp;<em><strong>1500</strong></em>
-                </td>
-            </tr>
-            </thead>
-        </table>
+<header>
+    <div class="fixed-container">
+        <div>
+            <a href="#">Услуги</a>
+            <a href="#">Портфолио</a>
+            <a href="#">Стоимость</a>
+        </div>
+        <div>
+            <span>+7 499 995 55 77</span>
+            <button class="light-button open-popup">Заказать звонок</button>
+        </div>
     </div>
-</div>
-<div>
-    <div>
-        <div class="alignCenter">&nbsp;</div>
+</header>
+<section class="first-block">
+    <div class="fixed-container">
+        <h1>Дмитрий Алексеев</h1>
+        <p>Frontend-разработчик и веб-верстальщик</p>
+        <button class="dark-button open-popup">Узнать больше</button>
     </div>
-</div>
+</section>
+<section>
+    <div class="fixed-container">
+        <h2>Что я делаю</h2>
+        <div class="services">
+            <div>
+                <img src="files/1.png" alt="">
+                Вёрстка лэндинг-страниц и сайтов любой сложности
+            </div>
+            <div>
+                <img src="files/2.png" alt="">
+                Адаптивная вёрстка под все браузеры и устройства
+            </div>
+            <div>
+                <img src="files/3.png" alt="">
+                Frontend-разработка и программирование
+            </div>
+            <div>
+                <img src="files/4.png" alt="">
+                Исправление и доработка существующей верстки
+            </div>
+        </div>
+        <button class="light-button open-popup">Узнать стоимость</button>
+    </div>
+</section>
+<section>
+    <div class="fixed-container">
+        <h2>Примеры работ</h2>
+        <div class="examples">
+            <div>
+                <img src="files/e1.png" alt="">
+                Сайт психолога Веры Антоновой
+            </div>
+            <div>
+                <img src="files/e2.png" alt="">
+                Сайт магазины детской одежды
+            </div>
+            <div>
+                <img src="files/e3.png" alt="">
+                Сайт магазина "Рыболов"
+            </div>
+        </div>
+    </div>
+</section>
+<section class="price-info">
+    <div class="fixed-container">
+        <h2>Адаптивная вёрстка под все<br>стройства и браузеры<br>от 1000 р. всего за 4 часа.*</h2>
+        <div class="custom-paragraphs">
+            <p>* Срок и стоимость могут отличаться от заявленных и расчитываются</p>
+            <p>индивидуально, в зависимости от сложности задач.</p>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="fixed-container">
+        <div class="footer-links-contacts-social">
+
+            <div class="footer-links">
+                <a href="#">Услуги</a>
+                <a href="#">Портфолио</a>
+                <a href="#">Стоимость</a>
+            </div>
+            <div class="footer-contacts">
+                <p>dmitry@alexeev.com</p>
+                <p>+7 (499) 995 77 55</p>
+            </div>
+            <div class="footer-social-media">
+                <div>
+                    <button class="light-button open-popup">Заказать звонок</button>
+                </div>
+                <div>
+                    <a href="#"><img src="files/fb.png" alt=""></a>
+                    <a href="#"><img src="files/vk.png" alt=""></a>
+                    <a href="#"><img src="files/you.png" alt=""></a>
+                    <a href="#"><img src="files/telegram.png" alt=""></a>
+                    <a href="#"><img src="files/inst.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
