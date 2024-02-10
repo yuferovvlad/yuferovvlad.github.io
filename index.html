@@ -1,334 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-          rel="stylesheet">
-
     <meta charset="UTF-8">
-    <title>Размеры и отступ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прайс-лист</title>
     <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            background-color: #f6f7f9;
-            font-family: 'Roboto', sans-serif;
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
         }
 
-        h1 {
-            font-size: 44px;
-            margin: 1px;
+        table {
+            margin: 0 auto;
+            width: 80%;
+            border-collapse: collapse;
+            font-size: 16px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        h2 {
-            font-size: 36px;
-            width: 50%;
-            margin: 1px;
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
         }
 
-        header {
-            height: 100px;
-            padding: 0 40px;
+        th {
+            background-color: #f2f2f2;
         }
 
-        header > div {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .updated {
+            margin-top: 20px;
+            font-style: italic;
+            font-size: 14px;
+            color: #666;
         }
 
-        .fixed-container {
-            max-width: 1000px;
-            height: 100%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .fixed-container a {
-            margin-right: 10px;
-        }
-
-        section {
-            padding: 40px;
-        }
-
-        .first-block > div {
-            display: flex;
-            background-image: url("man.png");
-            background-repeat: no-repeat;
-            background-size: contain;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            background-position: right center;
-            height: 450px;
-        }
-
-        .services {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
-        }
-
-        .services > div {
-            width: 200px;
-        }
-
-        .services img {
-            width: 150px;
-        }
-
-        .examples {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
-        }
-
-        .examples img {
-            width: 320px;
-        }
-
-        .price-info {
-            background-color: #3d52fe;
-            color: white;
-        }
-
-        .price-info .custom-paragraphs p {
-            font-size: 12px;
-            line-height: 0.2;
-        }
-
-        .price-info .fixed-container > div {
-            margin-top: 90px;
-            margin-bottom: 50px;
-        }
-
-        .light-button {
-            border: 1px solid black;
-            background-color: transparent;
-        }
-
-        .dark-button {
-            border: 1px solid #3d52fe;
-            background-color: #3d52fe;
-            color: white;
-            margin: 1px;
-        }
-
-        button {
-            padding: 10px 30px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        footer {
-            padding: 40px;
-        }
-
-        footer .footer-links {
-            display: flex;
-            flex-direction: column;
-        }
-
-        footer img {
-            width: 50px;
-        }
-
-        footer a {
-            margin-bottom: 15px;
-        }
-
-        .footer-links-contacts-social {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
-        }
-
-        .footer-links-contacts-social img {
-            max-width: 17px;
-            max-height: 17px;
-        }
-
-        .footer-social-media {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .footer-social-media a {
-            margin-right: 20px;
-        }
-
-        .popup-container {
-            background-color: #000000b3;
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .popup {
-            background-color: white;
-            width: 300px;
-            height: 300px;
-            padding: 30px;
-            border-radius: 5px;
-        }
-
-        a {
-            color: black;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-
-    </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var container = document.querySelector('.popup-container');
-            var popupButtons = document.querySelectorAll('.open-popup');
-            var submitButton = document.getElementById('submitButton');
-
-            for (let i = 0; i < popupButtons.length; i++) {
-                popupButtons[i].addEventListener('click', function () {
-                    container.style.display = 'flex';
-                });
+        @media only screen and (max-width: 600px) {
+            table {
+                width: 100%;
             }
 
-            container.addEventListener('click', function (event) {
-                if (event.target == container) {
-                    container.style.display = 'none';
-                }
-            });
+            th, td {
+                padding: 8px;
+                font-size: 14px;
+            }
 
-            submitButton.addEventListener('click', function () {
-                container.style.display = 'none';
-            });
-        });
+            img {
+                max-width: 30px; /* Используем максимальную ширину для изображений */
+            }
+        }
 
-
-    </script>
+        @media only screen and (max-width: 400px) {
+            th, td {
+                padding: 6px;
+                font-size: 12px;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="popup-container">
-    <form class="popup">
-        <label>
-            <input type="text" placeholder="Введите ваше имя">
-        </label>
-        <label>
-            <input type="email" placeholder="Введите Email">
-        </label>
-        <button type="submit" id="submitButton">Отправить</button>
-    </form>
-</div>
-<header>
-    <div class="fixed-container">
-        <div>
-            <a href="#">Услуги</a>
-            <a href="#">Портфолио</a>
-            <a href="#">Стоимость</a>
-        </div>
-        <div>
-            <span>+7 499 995 55 77</span>
-            <button class="light-button open-popup">Заказать звонок</button>
-        </div>
-    </div>
-</header>
-<section class="first-block">
-    <div class="fixed-container">
-        <h1>Дмитрий Алексеев</h1>
-        <p>Frontend-разработчик и веб-верстальщик</p>
-        <button class="dark-button open-popup">Узнать больше</button>
-    </div>
-</section>
-<section>
-    <div class="fixed-container">
-        <h2>Что я делаю</h2>
-        <div class="services">
-            <div>
-                <img src="files/1.png" alt="">
-                Вёрстка лэндинг-страниц и сайтов любой сложности
-            </div>
-            <div>
-                <img src="files/2.png" alt="">
-                Адаптивная вёрстка под все браузеры и устройства
-            </div>
-            <div>
-                <img src="files/3.png" alt="">
-                Frontend-разработка и программирование
-            </div>
-            <div>
-                <img src="files/4.png" alt="">
-                Исправление и доработка существующей верстки
-            </div>
-        </div>
-        <button class="light-button open-popup">Узнать стоимость</button>
-    </div>
-</section>
-<section>
-    <div class="fixed-container">
-        <h2>Примеры работ</h2>
-        <div class="examples">
-            <div>
-                <img src="files/e1.png" alt="">
-                Сайт психолога Веры Антоновой
-            </div>
-            <div>
-                <img src="files/e2.png" alt="">
-                Сайт магазины детской одежды
-            </div>
-            <div>
-                <img src="files/e3.png" alt="">
-                Сайт магазина "Рыболов"
-            </div>
-        </div>
-    </div>
-</section>
-<section class="price-info">
-    <div class="fixed-container">
-        <h2>Адаптивная вёрстка под все<br>стройства и браузеры<br>от 1000 р. всего за 4 часа.*</h2>
-        <div class="custom-paragraphs">
-            <p>* Срок и стоимость могут отличаться от заявленных и расчитываются</p>
-            <p>индивидуально, в зависимости от сложности задач.</p>
-        </div>
-    </div>
-</section>
-<footer>
-    <div class="fixed-container">
-        <div class="footer-links-contacts-social">
 
-            <div class="footer-links">
-                <a href="#">Услуги</a>
-                <a href="#">Портфолио</a>
-                <a href="#">Стоимость</a>
-            </div>
-            <div class="footer-contacts">
-                <p>dmitry@alexeev.com</p>
-                <p>+7 (499) 995 77 55</p>
-            </div>
-            <div class="footer-social-media">
-                <div>
-                    <button class="light-button open-popup">Заказать звонок</button>
-                </div>
-                <div>
-                    <a href="#"><img src="files/fb.png" alt=""></a>
-                    <a href="#"><img src="files/vk.png" alt=""></a>
-                    <a href="#"><img src="files/you.png" alt=""></a>
-                    <a href="#"><img src="files/telegram.png" alt=""></a>
-                    <a href="#"><img src="files/inst.png" alt=""></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+<h2>Прайс-лист</h2>
+
+<table>
+    <tr>
+        <th>Услуга</th>
+        <th>Описание</th>
+        <th>Цена, руб.</th>
+    </tr>
+    <tr>
+        <td>Маникюр</td>
+        <td>Аппаратный маникюр без покрытия</td>
+        <td>1500</td>
+    </tr>
+    <tr>
+        <td>>Маникюр с покрытием гель-лак</td>
+        <td>Снятие старого покрытия, аппаратный маникюр, выравнивание ногтевой пластины, покрытие цветом под кутикулу +
+            дизайн двух ноготков в подарок!
+        </td>
+        <td>2000</td>
+    </tr>
+    <tr>
+        <td>>Укрепление гелем</td>
+        <td>Дополнительная услуга</td>
+        <td>200</td>
+    </tr>
+    <tr>
+        <td>Обработка пальчиков без покрытия</td>
+        <td>SMART-педикюр</td>
+        <td>1200</td>
+    </tr>
+    <tr>
+        <td>>Обработка пальчиков с покрытием</td>
+        <td>SMART-педикюр</td>
+        <td>2000</td>
+    </tr>
+    <tr>
+        <td>>Обработка стоп и пальчиков с покрытием</td>
+        <td>SMART-педикюр</td>
+        <td>2200</td>
+    </tr>
+    <tr>
+        <td>>Обработка стоп и пальчиков без покрытия</td>
+        <td>SMART-педикюр</td>
+        <td>1500</td>
+    </tr>
+    <!-- Продолжаем добавлять строки, если необходимо -->
+</table>
+
+<div class="updated">
+    <p>Обновлено 01.04.2023</p>
+</div>
+
 </body>
 </html>
